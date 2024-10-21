@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Tema1Ejercicio12 {
     public static void main(String[] args) {
 
-
         Scanner scanner = new Scanner(System.in);
         System.out.println("Introduce un año en números arábigos");
         int num1 = scanner.nextInt();
