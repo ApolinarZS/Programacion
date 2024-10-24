@@ -18,5 +18,7 @@ public class Tema2Ejercicio6 {
         } else if (num1 < 0){
             System.out.println("El número introducido es negativo");
         }
+        scanner.close();
+
     }
 }
