@@ -20,5 +20,7 @@ public class Tema2Ejercicio2 {
         //Mostramos los resultados al usuario\\
         System.out.println("Siendo "+base+" la base y "+altura+" la altura, el área y el perímetro del rectángulo son "+area+ " y "+per+" respectivamente.");
 
+        scanner.close();
+
     }
 }
