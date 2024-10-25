@@ -18,7 +18,7 @@ public class Tema2Ejercicio4 {
         double num3 = scanner.nextDouble();
 
         //Determinamos el valor más alto\\
-        if (num1 > num2 && num1 < num3){
+        if (num1 > num2 && num1 > num3){
             num4 = num1;
         } else if (num2 > num1 && num2 > num3){
             num4 = num2;
