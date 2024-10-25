@@ -9,6 +9,7 @@ public class Tema2Ejercicio14 {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Introduce la cantidad de personas.");
         int persona = scanner.nextInt();
+
         System.out.println("Introduce el número de días.");
         int dias = scanner.nextInt();
 

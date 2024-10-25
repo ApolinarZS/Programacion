@@ -10,7 +10,7 @@ public class Tema2Ejercicio1 {
         System.out.println("Introduce el valor del lado del cuadrado");
         double lado = scanner.nextDouble();
 
-        //Calculamos el área y el perimetro en dos nuevas variables\\
+        //Calculamos el área y el perímetro en dos nuevas variables\\
         double area = lado*lado;
         double per = 4*lado;
 
