@@ -15,6 +15,7 @@ public class Tema2Ejercicio22 {
             System.out.println("Introduce un número positivo");
             num = scanner.nextInt();
         }
+        scanner.close();
 
         //contamos las cifras\\
         int digitos = (int)(Math. log10(num)+1);

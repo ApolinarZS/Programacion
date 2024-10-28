@@ -13,5 +13,6 @@ public class Tema2Ejercicio21 {
             spares = num+ spares;
             System.out.println(spares);
         }
+
     }
 }

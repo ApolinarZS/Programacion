@@ -18,6 +18,7 @@ public class Tema2Ejercicio20 {
                 System.out.println(A);
             }
         }
+        scanner.close();
     }
 
 }
