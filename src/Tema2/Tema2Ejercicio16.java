@@ -7,7 +7,7 @@ public class Tema2Ejercicio16 {
 
         //Pedimos al usuario el valor D o E \\
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Introduce si quieres convertir euros adólares (D) o dólares a euros (E).");
+        System.out.println("Introduce si quieres convertir euros a dólares (D) o dólares a euros (E).");
         char valor = scanner.next().charAt(0);
 
         switch (valor){
@@ -16,7 +16,7 @@ public class Tema2Ejercicio16 {
                 System.out.println("Introduce el valor en euros a convertir a dólares (EEUU)");
                 double euros = scanner.nextDouble();
 
-                //Calculamos la conversión)
+                //Calculamos la conversión\\
                 double dolares = euros*1.08;
 
                 //Mostramos el resultado\\
@@ -27,7 +27,7 @@ public class Tema2Ejercicio16 {
                 System.out.println("Introduce el valor en dólares a convertir a euros (EEUU)");
                 double dolares = scanner.nextDouble();
 
-                //Calculamos la conversión)
+                //Calculamos la conversión\\
                 double euros = dolares * 0.93;
 
                 //Mostramos el resultado\\

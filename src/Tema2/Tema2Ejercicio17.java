@@ -12,11 +12,11 @@ public class Tema2Ejercicio17 {
 
         switch (valor){
             case '0'->{
-                //Le pido el valor del lado de cuadrado al usuario y creo la variable"\\
+                //Le pido el valor del lado de cuadrado al usuario y creo la variable\\
                 System.out.println("Introduce el valor del lado del cuadrado");
                 double lado = scanner.nextDouble();
 
-                //Calculamos el área y el perimetro en dos nuevas variables\\
+                //Calculamos el área y el perímetro en dos nuevas variables\\
                 double area = lado*lado;
                 double per = 4*lado;
 
