@@ -10,10 +10,11 @@ public class Tema2Ejercicio24 {
         int aprobados = 0;
         int suspendidos = 0;
         double nota;
+        boolean bucle = true;
 
         System.out.println("Introduce las notas de los alumnos (ingresa un número negativo para terminar):");
         //Pedimos las notas, establecemos la condición de clausura y sumamos los contadores\\
-        while (true) {
+        while (bucle) {
             System.out.print("Nota: ");
             nota = scanner.nextDouble();
             if (nota > 10) {
@@ -21,6 +22,7 @@ public class Tema2Ejercicio24 {
                 nota = scanner.nextDouble();
             }
             if (nota < 0) {
+                bucle = false;
                 break;
             }
 

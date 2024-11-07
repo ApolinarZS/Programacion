@@ -8,13 +8,15 @@ public class Tema2Ejercicio23 {
         Scanner scanner = new Scanner(System.in);
         int suma = 0;
         int contador = 0;
+        boolean bucle = true;
 
         System.out.println("Introduce números enteros");
 
-        while (true) {
+        while (bucle) {
             int numero = scanner.nextInt();
 
             if (numero < 0) {
+                bucle = false;
                 break;
             }
 
