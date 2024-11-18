@@ -18,6 +18,7 @@ public class PracticaProgramacionEstructurada {
         double j1_def_roll = 0; //el valor aleatorio de defensa
         int j1_vel = 0; //velocidad
         int j1_cp = 0; //poder de combate (suma total de las estadísticas)
+        int j1_pv_max = 0; //determina la vida máxima y evita que la regeneración la supere
 
         String j2_nombre = ".";
         int j2_pv = 0;
@@ -28,10 +29,13 @@ public class PracticaProgramacionEstructurada {
         double j2_def_roll = 0;
         int j2_vel = 0;
         int j2_cp = 0;
+        int j2_pv_max = 0; //determina la vida máxima y evita que la regeneración la supere
+
 
         int ronda = 0; //contador para las rondas
         int accion = 0; //acción a realizar
         int atk_calc = 0; //el resultado del ataque
+        boolean juego = true; //determinará si el combate en pie
 
         int personaje = 0; //variable que determina si el jugador elige un personaje predeterminado o personaje personalizado
         int clase = 0; //variable que determina la clase que elige el jugador
@@ -196,7 +200,8 @@ public class PracticaProgramacionEstructurada {
                             j1_pv = scanner.nextInt();
                         }
                         j1_cp = j1_pv + j1_cp;
-                        System.out.println("Has usado " + j1_cp + " puntos de estadísiticas");
+                        j1_pv_max = j1_pv;
+                        System.out.println("Has usado " + j1_cp + " puntos de estadísticas");
                     }
                     while (j1_atk == 0) {
                         System.out.println("Introduce tu ATAQUE (ATK)");
@@ -207,7 +212,7 @@ public class PracticaProgramacionEstructurada {
                             j1_atk = scanner.nextInt();
                         }
                         j1_cp = j1_atk + j1_cp;
-                        System.out.println("Has usado " + j1_cp + " puntos de estadísiticas");
+                        System.out.println("Has usado " + j1_cp + " puntos de estadísticas");
                     }
                     while (j1_def == 0) {
                         System.out.println("Introduce tu DEFENSA (DEF)");
@@ -218,7 +223,7 @@ public class PracticaProgramacionEstructurada {
                             j1_def = scanner.nextInt();
                         }
                         j1_cp = j1_def + j1_cp;
-                        System.out.println("Has usado " + j1_cp + " puntos de estadísiticas");
+                        System.out.println("Has usado " + j1_cp + " puntos de estadísticas");
                     }
                     while (j1_vel == 0) {
                         System.out.println("Introduce tu VELOCIDAD (VEL)");
@@ -229,7 +234,7 @@ public class PracticaProgramacionEstructurada {
                             j1_vel = scanner.nextInt();
                         }
                         j1_cp = j1_vel + j1_cp;
-                        System.out.println("Has usado " + j1_cp + " puntos de estadísiticas");
+                        System.out.println("Has usado " + j1_cp + " puntos de estadísticas");
                     }
                 }
             }
@@ -310,7 +315,7 @@ public class PracticaProgramacionEstructurada {
                         ⠀⠀⠹⣿⡏⠀⠀⢸⡍⠠⣹⣦⣤⡀⢸⣀⢀⠀⠀⠀⢀⡇⠀⠀⡏⠀⠀⠀⢸
                         ⠀⠀⠀⠰⡇⠀⠀⣇⢀⡀⠈⠓⠀⠈⡁⠀⠁⠀⠀⢀⣼⠀⠀⢀⡅⠀⠀⠀⢀""");
                 System.out.println("3. SHREK TO PETAO || VIDA (PV): 200 || ATAQUE (ATK): 99 || DEFENSA (DEF): 200 || VELOCIDAD (VEL): 1");
-                System.out.println("Entrenado en el pantano espantando ciaturas mágicas indeseables, resistente como la piedra.");
+                System.out.println("Entrenado en el pantano espantando criaturas mágicas indeseables, resistente como la piedra.");
                 System.out.println("""
                         ⠀⢀⣒⠒⠆⠤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
                         ⢠⡛⠛⠻⣷⣶⣦⣬⣕⡒⠤⢀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -383,8 +388,9 @@ public class PracticaProgramacionEstructurada {
                             System.out.println("Introduce tu VIDA (PV)");
                             j2_pv = scanner.nextInt();
                         }
+                        j2_pv_max = j2_pv;
                         j2_cp = j2_pv + j2_cp;
-                        System.out.println("Has usado " + j2_cp + " puntos de estadísiticas");
+                        System.out.println("Has usado " + j2_cp + " puntos de estadísticas");
                     }
                     while (j2_atk == 0) {
                         System.out.println("Introduce tu ATAQUE (ATK)");
@@ -395,7 +401,7 @@ public class PracticaProgramacionEstructurada {
                             j2_atk = scanner.nextInt();
                         }
                         j2_cp = j2_atk + j2_cp;
-                        System.out.println("Has usado " + j2_cp + " puntos de estadísiticas");
+                        System.out.println("Has usado " + j2_cp + " puntos de estadísticas");
                     }
                     while (j2_def == 0) {
                         System.out.println("Introduce tu DEFENSA (DEF)");
@@ -406,7 +412,7 @@ public class PracticaProgramacionEstructurada {
                             j2_def = scanner.nextInt();
                         }
                         j2_cp = j2_def + j2_cp;
-                        System.out.println("Has usado " + j2_cp + " puntos de estadísiticas");
+                        System.out.println("Has usado " + j2_cp + " puntos de estadísticas");
                     }
                     while (j2_vel == 0) {
                         System.out.println("Introduce tu VELOCIDAD (VEL)");
@@ -417,7 +423,7 @@ public class PracticaProgramacionEstructurada {
                             j2_vel = scanner.nextInt();
                         }
                         j2_cp = j2_vel + j2_cp;
-                        System.out.println("Has usado " + j2_cp + " puntos de estadísiticas");
+                        System.out.println("Has usado " + j2_cp + " puntos de estadísticas");
                     }
                 }
             }
@@ -455,7 +461,7 @@ public class PracticaProgramacionEstructurada {
             System.out.println("--------------------------------------------------------------------------------------------------------------------------");
 
             //Empezamos el combate
-            while (j1_pv > 0 || j2_pv > 0) {
+            while (juego) {
 
                 ronda++;
                 System.out.println("--------------------------------------------------------------------------------------------------------------------------");
@@ -479,13 +485,32 @@ public class PracticaProgramacionEstructurada {
                             System.out.println(j2_nombre + " recibe un ataque de " + atk_calc);
                             System.out.println(j2_nombre + " tiene " + j2_pv + " puntos de vida");
                             System.out.println("--------------------------------------------------------------------------------------------------------------------------");
+                            if (j2_pv <= 0) {
+                                j2_pv = 0;
+                                System.out.println("""
+                         __    __      ______     \s
+                        |  \\  /  \\    /      \\    \s
+                        | $$ /  $$   |  $$$$$$\\   \s
+                        | $$/  $$    | $$  | $$   \s
+                        | $$  $$     | $$  | $$   \s
+                        | $$$$$\\     | $$  | $$   \s
+                        | $$ \\$$\\  __| $$__/ $$ __\s
+                        | $$  \\$$\\|  \\\\$$    $$|  \\
+                         \\$$   \\$$ \\$$ \\$$$$$$  \\$$""");
+                                System.out.println("¡HA GANADO "+j1_nombre+"!");
+                                System.out.println("ENHORABUENA");
+                                juego = false;
+                            }
 
                         }
                         case 2 -> {
                             j1_pv_regen = roll.nextInt(1, 50);
                             j1_pv = j1_pv + j1_pv_regen;
+                            if (j1_pv > j1_pv_max){
+                                j1_pv = j1_pv_max;
+                            }
                             System.out.println("--------------------------------------------------------------------------------------------------------------------------");
-                            System.out.println(j1_nombre + " regenera " + j1_pv_regen + " puntos de piva");
+                            System.out.println(j1_nombre + " regenera " + j1_pv_regen + " puntos de vida");
                             System.out.println("Ahora tiene " + j1_pv + " puntos de vida");
                             System.out.println("--------------------------------------------------------------------------------------------------------------------------");
                         }
@@ -507,12 +532,31 @@ public class PracticaProgramacionEstructurada {
                                 System.out.println(j1_nombre + " recibe un ataque de " + atk_calc);
                                 System.out.println(j1_nombre + " tiene " + j1_pv + " puntos de vida");
                                 System.out.println("--------------------------------------------------------------------------------------------------------------------------");
+                                if (j1_pv <= 0) {
+                                    j1_pv = 0;
+                                    System.out.println("""
+                         __    __      ______     \s
+                        |  \\  /  \\    /      \\    \s
+                        | $$ /  $$   |  $$$$$$\\   \s
+                        | $$/  $$    | $$  | $$   \s
+                        | $$  $$     | $$  | $$   \s
+                        | $$$$$\\     | $$  | $$   \s
+                        | $$ \\$$\\  __| $$__/ $$ __\s
+                        | $$  \\$$\\|  \\\\$$    $$|  \\
+                         \\$$   \\$$ \\$$ \\$$$$$$  \\$$""");
+                                    System.out.println("¡HA GANADO "+j2_nombre+"!");
+                                    System.out.println("ENHORABUENA");
+                                    juego = false;
+                                }
                             }
                             case 2 -> {
                                 j2_pv_regen = roll.nextInt(1, 50);
                                 j2_pv = j2_pv + j2_pv_regen;
+                                if (j2_pv > j2_pv_max){
+                                    j2_pv = j2_pv_max;
+                                }
                                 System.out.println("--------------------------------------------------------------------------------------------------------------------------");
-                                System.out.println(j2_nombre + " regenera " + j2_pv_regen + " puntos de piva");
+                                System.out.println(j2_nombre + " regenera " + j2_pv_regen + " puntos de vida");
                                 System.out.println("Ahora tiene " + j2_pv + " puntos de vida");
                                 System.out.println("--------------------------------------------------------------------------------------------------------------------------");
                             }
@@ -528,25 +572,46 @@ public class PracticaProgramacionEstructurada {
                     System.out.println("--------------------------------------------------------------------------------------------------------------------------");
                     accion = scanner.nextInt();
 
-                    switch (accion) {
-                        case 1 -> {
-                            j2_atk_roll = roll.nextDouble(0.15, 0.5);
-                            j1_def_roll = roll.nextDouble(0.07, 0.20);
-                            atk_calc = (int) ((j2_atk * j2_atk_roll) * 3 / (j1_def * j1_def_roll));
-                            j1_pv = j1_pv - atk_calc;
-                            System.out.println("--------------------------------------------------------------------------------------------------------------------------");
-                            System.out.println(j1_nombre + " recibe un ataque de " + atk_calc);
-                            System.out.println(j1_nombre + " tiene " + j1_pv + " puntos de vida");
-                            System.out.println("--------------------------------------------------------------------------------------------------------------------------");
+                    if (j2_pv > 0){
+                        switch (accion) {
+                            case 1 -> {
+                                j2_atk_roll = roll.nextDouble(0.15, 0.5);
+                                j1_def_roll = roll.nextDouble(0.07, 0.20);
+                                atk_calc = (int) ((j2_atk * j2_atk_roll) * 3 / (j1_def * j1_def_roll));
+                                j1_pv = j1_pv - atk_calc;
+                                System.out.println("--------------------------------------------------------------------------------------------------------------------------");
+                                System.out.println(j1_nombre + " recibe un ataque de " + atk_calc);
+                                System.out.println(j1_nombre + " tiene " + j1_pv + " puntos de vida");
+                                System.out.println("--------------------------------------------------------------------------------------------------------------------------");
+                                if (j1_pv <= 0) {
+                                    j1_pv = 0;
+                                    System.out.println("""
+                         __    __      ______     \s
+                        |  \\  /  \\    /      \\    \s
+                        | $$ /  $$   |  $$$$$$\\   \s
+                        | $$/  $$    | $$  | $$   \s
+                        | $$  $$     | $$  | $$   \s
+                        | $$$$$\\     | $$  | $$   \s
+                        | $$ \\$$\\  __| $$__/ $$ __\s
+                        | $$  \\$$\\|  \\\\$$    $$|  \\
+                         \\$$   \\$$ \\$$ \\$$$$$$  \\$$""");
+                                    System.out.println("¡HA GANADO "+j2_nombre+"!");
+                                    System.out.println("ENHORABUENA");
+                                    juego = false;
+                                }
 
-                        }
-                        case 2 -> {
-                            j2_pv_regen = roll.nextInt(1, 50);
-                            j2_pv = j2_pv + j2_pv_regen;
-                            System.out.println("--------------------------------------------------------------------------------------------------------------------------");
-                            System.out.println(j2_nombre + " regenera " + j2_pv_regen + " puntos de piva");
-                            System.out.println("Ahora tiene " + j2_pv + " puntos de vida");
-                            System.out.println("--------------------------------------------------------------------------------------------------------------------------");
+                            }
+                            case 2 -> {
+                                j2_pv_regen = roll.nextInt(1, 50);
+                                j2_pv = j2_pv + j2_pv_regen;
+                                if (j2_pv > j2_pv_max){
+                                    j2_pv = j2_pv_max;
+                                }
+                                System.out.println("--------------------------------------------------------------------------------------------------------------------------");
+                                System.out.println(j2_nombre + " regenera " + j2_pv_regen + " puntos de vida");
+                                System.out.println("Ahora tiene " + j2_pv + " puntos de vida");
+                                System.out.println("--------------------------------------------------------------------------------------------------------------------------");
+                            }
                         }
                     }
                     if (j1_pv > 0) {
@@ -564,13 +629,32 @@ public class PracticaProgramacionEstructurada {
                                 System.out.println(j2_nombre + " recibe un ataque de " + atk_calc);
                                 System.out.println(j2_nombre + " tiene " + j2_pv + " puntos de vida");
                                 System.out.println("--------------------------------------------------------------------------------------------------------------------------");
+                                if (j2_pv <= 0) {
+                                    j2_pv = 0;
+                                    System.out.println("""
+                         __    __      ______     \s
+                        |  \\  /  \\    /      \\    \s
+                        | $$ /  $$   |  $$$$$$\\   \s
+                        | $$/  $$    | $$  | $$   \s
+                        | $$  $$     | $$  | $$   \s
+                        | $$$$$\\     | $$  | $$   \s
+                        | $$ \\$$\\  __| $$__/ $$ __\s
+                        | $$  \\$$\\|  \\\\$$    $$|  \\
+                         \\$$   \\$$ \\$$ \\$$$$$$  \\$$""");
+                                    System.out.println("¡HA GANADO "+j1_nombre+"!");
+                                    System.out.println("ENHORABUENA");
+                                    juego = false;
+                                }
 
                             }
                             case 2 -> {
                                 j1_pv_regen = roll.nextInt(1, 50);
                                 j1_pv = j1_pv + j1_pv_regen;
+                                if (j1_pv > j1_pv_max){
+                                    j1_pv = j1_pv_max;
+                                }
                                 System.out.println("--------------------------------------------------------------------------------------------------------------------------");
-                                System.out.println(j1_nombre + " regenera " + j1_pv_regen + " puntos de piva");
+                                System.out.println(j1_nombre + " regenera " + j1_pv_regen + " puntos de vida");
                                 System.out.println("Ahora tiene " + j1_pv + " puntos de vida");
                                 System.out.println("--------------------------------------------------------------------------------------------------------------------------");
                             }
@@ -606,17 +690,36 @@ public class PracticaProgramacionEstructurada {
                                 System.out.println(j2_nombre + " recibe un ataque de " + atk_calc);
                                 System.out.println(j2_nombre + " tiene " + j2_pv + " puntos de vida");
                                 System.out.println("--------------------------------------------------------------------------------------------------------------------------");
+                                if (j2_pv <= 0) {
+                                    j2_pv = 0;
+                                    System.out.println("""
+                         __    __      ______     \s
+                        |  \\  /  \\    /      \\    \s
+                        | $$ /  $$   |  $$$$$$\\   \s
+                        | $$/  $$    | $$  | $$   \s
+                        | $$  $$     | $$  | $$   \s
+                        | $$$$$\\     | $$  | $$   \s
+                        | $$ \\$$\\  __| $$__/ $$ __\s
+                        | $$  \\$$\\|  \\\\$$    $$|  \\
+                         \\$$   \\$$ \\$$ \\$$$$$$  \\$$""");
+                                    System.out.println("¡HA GANADO "+j1_nombre+"!");
+                                    System.out.println("ENHORABUENA");
+                                    juego = false;
+                                }
                             }
                             case 2 -> {
                                 j1_pv_regen = roll.nextInt(1, 50);
                                 j1_pv = j1_pv + j1_pv_regen;
+                                if (j1_pv > j1_pv_max){
+                                    j1_pv = j1_pv_max;
+                                }
                                 System.out.println("--------------------------------------------------------------------------------------------------------------------------");
-                                System.out.println(j1_nombre + " regenera " + j1_pv_regen + " puntos de piva");
+                                System.out.println(j1_nombre + " regenera " + j1_pv_regen + " puntos de vida");
                                 System.out.println("Ahora tiene " + j1_pv + " puntos de vida");
                                 System.out.println("--------------------------------------------------------------------------------------------------------------------------");
                             }
 
-                        }
+                         }
                         if (j2_pv > 0) {
                             System.out.println("--------------------------------------------------------------------------------------------------------------------------");
                             System.out.println(j2_nombre + ",¿qué acción deseas realizar?");
@@ -635,17 +738,36 @@ public class PracticaProgramacionEstructurada {
                                     System.out.println(j1_nombre + " recibe un ataque de " + atk_calc);
                                     System.out.println(j1_nombre + " tiene " + j1_pv + " puntos de vida");
                                     System.out.println("--------------------------------------------------------------------------------------------------------------------------");
+                                    if (j1_pv <= 0) {
+                                        j1_pv = 0;
+                                        System.out.println("""
+                         __    __      ______     \s
+                        |  \\  /  \\    /      \\    \s
+                        | $$ /  $$   |  $$$$$$\\   \s
+                        | $$/  $$    | $$  | $$   \s
+                        | $$  $$     | $$  | $$   \s
+                        | $$$$$\\     | $$  | $$   \s
+                        | $$ \\$$\\  __| $$__/ $$ __\s
+                        | $$  \\$$\\|  \\\\$$    $$|  \\
+                         \\$$   \\$$ \\$$ \\$$$$$$  \\$$""");
+                                        System.out.println("¡HA GANADO "+j2_nombre+"!");
+                                        System.out.println("ENHORABUENA");
+                                        juego = false;
+                                    }
                                 }
                                 case 2 -> {
                                     j2_pv_regen = roll.nextInt(1, 50);
                                     j2_pv = j2_pv + j2_pv_regen;
+                                    if (j2_pv > j2_pv_max){
+                                        j2_pv = j2_pv_max;
+                                    }
                                     System.out.println("--------------------------------------------------------------------------------------------------------------------------");
-                                    System.out.println(j2_nombre + " regenera " + j2_pv_regen + " puntos de piva");
+                                    System.out.println(j2_nombre + " regenera " + j2_pv_regen + " puntos de vida");
                                     System.out.println("Ahora tiene " + j2_pv + " puntos de vida");
                                     System.out.println("--------------------------------------------------------------------------------------------------------------------------");
                                 }
                             }
-                        }
+                         }
 
                     }
                     if (turnoaleatorio == 2) {
@@ -665,13 +787,32 @@ public class PracticaProgramacionEstructurada {
                                 System.out.println(j1_nombre + " recibe un ataque de " + atk_calc);
                                 System.out.println(j1_nombre + " tiene " + j1_pv + " puntos de vida");
                                 System.out.println("--------------------------------------------------------------------------------------------------------------------------");
+                                if (j1_pv <= 0) {
+                                    j1_pv = 0;
+                                    System.out.println("""
+                         __    __      ______     \s
+                        |  \\  /  \\    /      \\    \s
+                        | $$ /  $$   |  $$$$$$\\   \s
+                        | $$/  $$    | $$  | $$   \s
+                        | $$  $$     | $$  | $$   \s
+                        | $$$$$\\     | $$  | $$   \s
+                        | $$ \\$$\\  __| $$__/ $$ __\s
+                        | $$  \\$$\\|  \\\\$$    $$|  \\
+                         \\$$   \\$$ \\$$ \\$$$$$$  \\$$""");
+                                    System.out.println("¡HA GANADO "+j2_nombre+"!");
+                                    System.out.println("ENHORABUENA");
+                                    juego = false;
+                                }
 
                             }
                             case 2 -> {
                                 j2_pv_regen = roll.nextInt(1, 50);
                                 j2_pv = j2_pv + j2_pv_regen;
+                                if (j2_pv > j2_pv_max){
+                                    j2_pv = j2_pv_max;
+                                }
                                 System.out.println("--------------------------------------------------------------------------------------------------------------------------");
-                                System.out.println(j2_nombre + " regenera " + j2_pv_regen + " puntos de piva");
+                                System.out.println(j2_nombre + " regenera " + j2_pv_regen + " puntos de vida");
                                 System.out.println("Ahora tiene " + j2_pv + " puntos de vida");
                                 System.out.println("--------------------------------------------------------------------------------------------------------------------------");
                             }
@@ -692,12 +833,31 @@ public class PracticaProgramacionEstructurada {
                                     System.out.println(j2_nombre + " recibe un ataque de " + atk_calc);
                                     System.out.println(j2_nombre + " tiene " + j2_pv + " puntos de vida");
                                     System.out.println("--------------------------------------------------------------------------------------------------------------------------");
+                                    if (j2_pv <= 0) {
+                                        j2_pv = 0;
+                                        System.out.println("""
+                         __    __      ______     \s
+                        |  \\  /  \\    /      \\    \s
+                        | $$ /  $$   |  $$$$$$\\   \s
+                        | $$/  $$    | $$  | $$   \s
+                        | $$  $$     | $$  | $$   \s
+                        | $$$$$\\     | $$  | $$   \s
+                        | $$ \\$$\\  __| $$__/ $$ __\s
+                        | $$  \\$$\\|  \\\\$$    $$|  \\
+                         \\$$   \\$$ \\$$ \\$$$$$$  \\$$""");
+                                        System.out.println("¡HA GANADO "+j1_nombre+"!");
+                                        System.out.println("ENHORABUENA");
+                                        juego = false;
+                                    }
                                 }
                                 case 2 -> {
                                     j1_pv_regen = roll.nextInt(1, 50);
                                     j1_pv = j1_pv + j1_pv_regen;
+                                    if (j1_pv > j1_pv_max){
+                                        j1_pv = j1_pv_max;
+                                    }
                                     System.out.println("--------------------------------------------------------------------------------------------------------------------------");
-                                    System.out.println(j1_nombre + " regenera " + j1_pv_regen + " puntos de piva");
+                                    System.out.println(j1_nombre + " regenera " + j1_pv_regen + " puntos de vida");
                                     System.out.println("Ahora tiene " + j1_pv + " puntos de vida");
                                     System.out.println("--------------------------------------------------------------------------------------------------------------------------");
                                 }
@@ -705,40 +865,10 @@ public class PracticaProgramacionEstructurada {
                         }
                     }
                 }
-                if (j1_pv <= 0) {
-                    j1_pv = 0;
-                    System.out.println("""
-                         __    __      ______     \s
-                        |  \\  /  \\    /      \\    \s
-                        | $$ /  $$   |  $$$$$$\\   \s
-                        | $$/  $$    | $$  | $$   \s
-                        | $$  $$     | $$  | $$   \s
-                        | $$$$$\\     | $$  | $$   \s
-                        | $$ \\$$\\  __| $$__/ $$ __\s
-                        | $$  \\$$\\|  \\\\$$    $$|  \\
-                         \\$$   \\$$ \\$$ \\$$$$$$  \\$$""");
-                    System.out.println("¡HA GANADO "+j2_nombre+"!");
-                    System.out.println("ENHORABUENA");
-                }
-                if (j2_pv <= 0) {
-                    j2_pv = 0;
-                    System.out.println("""
-                         __    __      ______     \s
-                        |  \\  /  \\    /      \\    \s
-                        | $$ /  $$   |  $$$$$$\\   \s
-                        | $$/  $$    | $$  | $$   \s
-                        | $$  $$     | $$  | $$   \s
-                        | $$$$$\\     | $$  | $$   \s
-                        | $$ \\$$\\  __| $$__/ $$ __\s
-                        | $$  \\$$\\|  \\\\$$    $$|  \\
-                         \\$$   \\$$ \\$$ \\$$$$$$  \\$$""");
-                    System.out.println("¡HA GANADO "+j1_nombre+"!");
-                    System.out.println("ENHORABUENA");
             }
-                scanner.close();
-            }
-        }
-
+        scanner.close();
     }
+
+}
 
 
