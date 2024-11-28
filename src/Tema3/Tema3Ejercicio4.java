@@ -23,7 +23,7 @@ public class Tema3Ejercicio4 {
             case 2->{
                 System.out.println("Introduce el valor a cambiar de dólares a euros");
                 double valor = scanner.nextDouble();
-                double resultadonuevoeuro = (euro2dollar(valor));//almaceno la función para usarla cómodamente
+                double resultadonuevoeuro = (dollar2euro(valor));//almaceno la función para usarla cómodamente
                 System.out.println(valor+"dólares son "+resultadonuevoeuro+" euros");//le muestro el resultado al usuario
             }
         }

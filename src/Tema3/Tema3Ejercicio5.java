@@ -13,8 +13,8 @@ public class Tema3Ejercicio5 {
     //función que me calculará la tabla de multiplicar que pida el usuario
     public static void tablas(int num){
 
-        for (int ii= 1; ii <= 10; ii++){//bucle que calcula y muestra el resultado de las multiplicaciones
-            System.out.println(num+" * "+ii+" = "+(num*ii));
+        for (int i= 1; i <= 10; i++){//bucle que calcula y muestra el resultado de las multiplicaciones
+            System.out.println(num+" * "+i+" = "+(num*i));
         }
     }
 }
