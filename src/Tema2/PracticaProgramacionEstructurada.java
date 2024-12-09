@@ -868,7 +868,6 @@ public class PracticaProgramacionEstructurada {
             }
         scanner.close();
     }
-
 }
 
 
