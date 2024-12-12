@@ -1,6 +1,5 @@
 package Tema2;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Tema2Ejercicio4 {

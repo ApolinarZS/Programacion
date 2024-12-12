@@ -10,7 +10,7 @@ public class Tema2Ejercicio9 {
         System.out.println("Introduce el valor en dólares a convertir a euros (EEUU)");
         double dolares = scanner.nextDouble();
 
-        //Calculamos la conversión)
+        //Calculamos la conversión
         double euros = dolares * 0.93;
 
         //Mostramos el resultado\\
