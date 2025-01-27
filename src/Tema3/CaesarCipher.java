@@ -25,7 +25,7 @@ public class CaesarCipher {
 
     public static String encrypt(String mensaje) {
 
-        StringBuilder encriptado = new StringBuilder();
+        StringBuilder encriptado = new StringBuilder(); //haremos un string modificable usando el stringbuilder
 
         for (char caracter : mensaje.toUpperCase().toCharArray()) { // Elevamos a mayúsculas y convertimos la cadena en un array
             if (caracter >= 'A' && caracter <= 'Z') {
@@ -46,6 +46,7 @@ public class CaesarCipher {
     public static String decrypt(String mensaje) {
 
         StringBuilder desencriptado = new StringBuilder();
+
         for (char caracter : mensaje.toUpperCase().toCharArray()) { // Elevamos a mayúsculas y convertimos la cadena en un array
             if (caracter >= 'A' && caracter <= 'Z') {
                 // Si es una letra, retrocede 1 posición (A -> Z)
