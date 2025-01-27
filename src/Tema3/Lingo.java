@@ -41,7 +41,7 @@ public class Lingo {
             // Verificar si el jugador adivinó la palabra
             if (guess.equals(oculta)) {
                 System.out.println("¡Congratulations! Has adivinado la palabra correctamente.");
-                return; //para finalizar completamente el métdo
+                return; //para finalizar completamente el métdo.
             }
         }
         System.out.println("Lo siento, no has adivinado la palabra. La palabra correcta era: " + oculta);
