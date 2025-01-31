@@ -3,13 +3,15 @@ package Tema4;
 public class Reloj {
 
     //Atributos del reloj
-    private  int hora;
+    private int hora;
     private int minuto;
     private int segundo;
     private boolean modo;
 
     public Reloj() {
-
+        this.hora = 0;
+        this.minuto = 0;
+        this.segundo = 0;
     }
 
     public Reloj(int hora, int minuto, int segundo) {

@@ -57,19 +57,19 @@ public class MyString {
         System.out.println("Introduce la cadena de la cual quieras saber la palabra más larga");
         String cadena = scanner.nextLine();
 
-        String lamaslarga = "";
+        String laMasLarga = "";
         int longitud = 0;
 
         String[] palabras = cadena.split(" ");//separamos por los espacios
 
         for (String palabra : palabras) {// : para mirar de palabra en palabra
             if (palabra.length() > longitud) {//comparamos la longitud de las palabras metiendo en la variable lamaslarga, la palabra más larga hasta el momento
-                lamaslarga = palabra;
+                laMasLarga = palabra;
                 longitud = palabra.length();
             }
         }
 
-        return lamaslarga;
+        return laMasLarga;
     }
 
     public static int vecesincluida(){
@@ -141,7 +141,7 @@ public class MyString {
 
         System.out.println("Total de vocales: " + (a+e+i+o+u));
 
-        System.out.println("Cantidad de a: " + a);
+        System.out.println("Cantidad de a: " + a + ("*").repeat(a));
         System.out.println("Cantidad de e: " + e);
         System.out.println("Cantidad de i: " + i);
         System.out.println("Cantidad de o: " + o);

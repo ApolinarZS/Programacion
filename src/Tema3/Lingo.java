@@ -64,13 +64,13 @@ public class Lingo {
         // Marcar las letras en la posición correcta
         for (int i = 0; i < longitud; i++) {
             if (userGuess.charAt(i) == hiddenWord.charAt(i)) {
-                hint.setCharAt(i, '*'); // Marca posición correcta
+                hint.setCharAt(i, '*'); // Marca posición correcta. Muestra la letra
                 usedInHidden[i] = 1;   // Marca posición usada en la palabra oculta
                 usedInGuess[i] = 1;    // Marca posición usada en el intento
             }
         }
 
-        // Marcar letras contenidas pero en posiciones incorrectas
+        // Marcar letras contenidas pero en posiciones incorrectas. Mostrar "*"
         for (int i = 0; i < longitud; i++) {
             if (usedInGuess[i] == 0) { // Solo procesar las posiciones no usadas
                 for (int j = 0; j < longitud; j++) {
