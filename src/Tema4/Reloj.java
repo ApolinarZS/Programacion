@@ -29,7 +29,7 @@ public class Reloj {
     }
 
     public void setHora(int hora) {
-        if (hora < 0 || hora > 24){
+        if (hora < 0 || hora > 23){
             hora = 0;
         }
         this.hora = hora;
