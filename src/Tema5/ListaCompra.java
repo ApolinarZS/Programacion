@@ -30,13 +30,39 @@ public class ListaCompra {
             }
         }
 
-        scanner.close();
+        CarroCompra carroCompra = new CarroCompra(listaCompra);
+        int opcion;
+        do {
+            System.out.println("=== Menú del Carro de la Compra ===");
+            System.out.println("1. Añadir producto al carro");
+            System.out.println("2. Mostrar productos en el carro");
+            System.out.println("3. Mostrar productos faltantes");
+            System.out.println("4. Salir");
+            System.out.print("Seleccione una opción: ");
+            opcion = scanner.nextInt();
+            scanner.nextLine();
 
-        System.out.println("\n=== Lista final de la compra ===");
-        if (listaCompra.isEmpty()) {
-            System.out.println("La lista está vacía.");
-        } else {
-            listaCompra.forEach(p -> System.out.println("- " + p));
-        }
+            switch (opcion) {
+                case 1:
+                    System.out.print("Introduce el producto a añadir al carro: ");
+                    String productoCarro = scanner.nextLine().trim().toLowerCase();
+                    carroCompra.agregarProductoAlCarro(productoCarro);
+                    break;
+                case 2:
+                    carroCompra.mostrarProductosEnCarro();
+                    break;
+                case 3:
+                    carroCompra.mostrarProductosFaltantes();
+                    break;
+                case 4:
+                    System.out.println("Saliendo del programa.");
+                    break;
+                default:
+                    System.out.println("Opción no válida. Intente nuevamente.");
+            }
+        } while (opcion != 4);
+
+        scanner.close();
     }
 }
+
